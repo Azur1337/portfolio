@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>azur's site</title>
+    <meta property="og:title" content="azur's site">
+    <meta name="description" content="Hobbyist programmer, catlover.">
+    <meta property="og:description" content="Hobbyist programmer, catlover.">
+    <style>
+        @font-face {
+            font-family: 'Twilio Sans Mono Regular';
+            src: url('../TwilioSansMonoR.D68j1vbE.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Twilio Sans Mono Semibold';
+            src: url('../TwilioSansMonoSBi.Bf1vTUbR.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Merriweather Bold Italic';
+            src: url('../MerriweatherBi.ClSsL0df.ttf') format('truetype');
+        }
+
+        @keyframes whoosh {
+            0% {
+                opacity: 0;
+                transform: translateY(3%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .whoosh {
+            animation: whoosh .5s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes gradientAnimation {
+
+            0%,
+            to {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .animate-gradient {
+            animation: gradientAnimation 10s ease-in-out infinite;
+        }
+
+        html,
+        body {
+            background-color: #171717;
+            color: #fff;
+            font-family: 'Twilio Sans Mono Regular', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+            font-weight: normal;
+        }
+
+        a {
+            color: #bfdbfe;
+            text-decoration: none;
+        }
+
+        .drop-shadow-glow {
+            filter: drop-shadow(0px 0px 6px #666);
+        }
+
+        .text-yellow-200 {
+            color: #fef08a;
+        }
+
+        .text-blue-200 {
+            color: #bfdbfe;
+        }
+
+        .m-10 {
+            margin: 2.5rem;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .drop-shadow-glow {
+            filter: drop-shadow(0px 0px 6px #666);
+        }
+
+        .text-5xl {
+            font-size: 3rem;
+        }
+
+        .text-3xl {
+            font-size: 1.875rem;
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+        }
+
+        .py-1 {
+            padding-top: .25rem;
+            padding-bottom: .25rem;
+        }
+
+        .my-3 {
+            margin-top: .75rem;
+            margin-bottom: .75rem;
+        }
+
+        .my-5 {
+            margin-top: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .drop-shadow-glow {
+            filter: drop-shadow(0px 0px 6px #666);
+        }
+    </style>
+</head>
+
+<body class="whoosh">
+    <div class="m-10">
+        <div class="flex items-center drop-shadow-glow flex-wrap my-3">
+            <h1 class="text-5xl mr-1">azur</h1>
+        </div>
+        <h3>Hobbyist programmer, catlover.</h3>
+        <hr class="my-5">
+        <h1>Hello!</h1>
+        <p>I'm Azur, a 19-year-old developer with a focus on building websites using React or SvelteKit alongside
+            Tailwind CSS. I also specialize in backend development with Rust.</p>
+        <p>My expertise lies in modern web technologies and programming, and I'm always exploring new ways to leverage
+            these tools for innovative solutions.</p>
+        <hr class="my-5">
+        <p class="text-3xl mt-3">Here are some of my notable projects:</p>
+        <div class="my-3">
+            <h1 class="text-2xl py-1 drop-shadow-glow">Workwatch</h1>
+            <p class="py-1">A web application designed to monitor student attendance in schools, providing all the
+                essential features a school needs.</p>
+            <p class="py-1 text-yellow-200 italic">Made with: Java, SvelteKit, Tailwind CSS, TypeScript</p>
+            <a href="https://github.com/workwatch">Check it out here</a>
+        </div>
+    </div>
+</body>
+
+</html>
