@@ -65,6 +65,7 @@
             margin: 0;
             padding: 0;
             height: 100%;
+            position: relative;
         }
 
         body {
@@ -108,10 +109,6 @@
             align-items: center;
         }
 
-        .drop-shadow-glow {
-            filter: drop-shadow(0px 0px 6px #666);
-        }
-
         .text-5xl {
             font-size: 3rem;
         }
@@ -143,13 +140,36 @@
             font-style: italic;
         }
 
-        .drop-shadow-glow {
-            filter: drop-shadow(0px 0px 6px #666);
+        .button-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .button-container a {
+            display: block;
+        }
+
+        .button-container img {
+            width: 40px; /* Adjust size as needed */
+            height: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .button-container:hover img {
+            transform: scale(1.1);
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 
 <body class="whoosh">
+    <div class="button-container">
+        <a href="/jellyfin">
+            <img src="./jellyfin.svg" alt="Jellyfin">
+        </a>
+    </div>
     <div class="m-10">
         <div class="flex items-center drop-shadow-glow flex-wrap my-3">
             <h1 class="text-5xl mr-1">azur</h1>
