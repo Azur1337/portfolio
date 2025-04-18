@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio | Azur - Frontend Developer & UI/UX Designer. Explore my projects and skills in web development, design, and modern technologies. Type help for a list of supported commands.">
+  <meta name="keywords" content="Miguel Cadeddu, Azur, Portfolio, Frontend Developer, UI/UX Designer, HTML, CSS, JavaScript, SvelteKit, TailwindCSS, Rust, Web Development">
+  <meta name="author" content="Miguel Cadeddu">
+  <meta http-equiv="refresh" content="250">
+  <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
+  <link href="main.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/39565093f3.js"></script>
+  <title>Azur</title>
+</head>
+
+<body style="font-family: 'Ubuntu', sans-serif;" class="overflow-hidden lazy text-[1.1rem] overflow-y-scroll">
+
+  <div class="m-2 relative overflow-hidden" onclick="document.getElementById('texter').focus();">
+    <div
+      class="ring-1 ring-purple-500 bg-[#232136d8] border-[#C4A7E7] border hover:backdrop-blur-sm rounded-[2px] shadow-xl shadow-[#1d1e1fb4] resize overflow-y-scroll"
+      style="max-height: calc(100vh + 2rem);">
+
+      <header>
+        <p class="p-2 text-center text-[#C4A7E7]">
+          <a href="https://github.com/azur1337/" target="blank"><i
+              class="fa-brands fa-github pt-[2.5px] text-xl float-left text-[#C4A7E7] hover:text-[#907AA9]"></i>azur@arch0x187</a>
+          <a href="javascript:close_window();"><i
+              class="fa-solid fa-circle-xmark pt-[2.5px] text-xl justify-end text-[#C4A7E7] hover:text-[#907AA9] items-end  float-right"></i></a>
+        </p>
+        <hr class="border-[#C4A7E7]">
+      </header>
+      <div class="p-4">
+        <div class="flex flex-col md:flex-row">
+          <pre
+            class="ascii pt-2 pb-5 prose lg:prose-xl text-[#C4A7E7ac] whitespace-pre-wrap inline-block break-words leading-none"
+            style="font-family: monospace,-webkit-pictograph;">
+█▀█ ▀▀█ █░█ █▀█           
+█▀█░█▄▄ █▄█░█▀▄
+            </pre>
+          <div class="pl-2 float-right" ; style="font-family: 'Ubuntu', sans-serif;">
+            <div class="text-[#C4A7E7] md:text-[16px] text-[15px]">
+              <i
+                class="fa-solid fa-address-card pr-[0.9rem]"></i>Azur
+              <pre class="text-[#C4A7E7]">•☽────✧˖°˖☆˖°˖✧────☾•</pre>
+
+            </div>
+
+              <a href="https://github.com/azur1337" target="blank">
+                <div class="text-[#C4A7E7] text-[17.3px]"><i
+                    class="fa-brands fa-github pr-[0.7rem] justify-items-start"></i>Github<a
+                    href="https://github.com/azur1337" target="blank" class="text-[14.8px] p-1 ">→
+                    &nbsp;github/azur1337</a></div>
+          </div>
+        </div>
+        <div id="terminal">
+          <a id="before"></a>
+        </div>
+        <div id="command" onclick="$('texter').focus();">
+          <input type="text" id="texter" class="texter" onkeyup="typeIt(this, event)" onkeydown="typeIt(this, event); 
+                   moveIt(this.value.length, event)" onkeypress="typeIt(this, event);"></input>
+          <div id="liner">
+            <span id="typer"></span><b class="cursor" id="cursor">█</b>
+            <div class="list"></div>
+
+          </div>
+        </div>
+        <footer class="lg:pt-[28.5%] pt-[100%]">
+          <div
+            class="p-2  bg-[#2A273Fa7] border-[#C4A7E7] border rounded-[2px] w-full md:w-max float-right relative bottom-4 ">
+            <div class="flex flex-row p-1">
+              <a href="https://open.spotify.com/user/1icx1olhc58uajq1i3kaeapdz"><i
+                  class="fa-brands fa-spotify  animate-none md:animate-spin md:text-[5rem] text-[3rem] "
+                  style="animation-duration: 12s;"></i>
+                <div class="">
+                  <div class="flex md:flex-col flex-row pl-2 text-[15px] md:text-[17px]">Now Listening
+                    to......&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </a>
+              <div class="underline text-[15px] md:text-[17px]">
+                <div class=”artist” id="track">Track: </div>
+                <div class="text-[15px] md:text-[17px]"></div>
+                <div class=”track” id="song">Artist: </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    </footer>
+    <script src="./js/caret.js"></script>
+    <script src="./js/commands.js"></script>
+    <script src="./js/main.js"></script>
+
+
+</body>
+
+</html>
