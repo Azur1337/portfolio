@@ -362,19 +362,6 @@
   --color-pink-9: var(--pink-9);
   --color-pink-10: var(--pink-10);
 
-  /* Shadcn colors */
-  --color-foreground-1: var(--color-grey-10);
-  --color-foreground-2: var(--color-grey-9);
-
-  --color-muted: var(--color-grey-1);
-  --color-muted-foreground: var(--color-foreground-2);
-
-  --color-popover: var(--color-grey-1);
-  --color-popover-foreground: var(--color-foreground-1);
-
-  --color-card: var(--color-grey-1);
-  --color-card-foreground: var(--color-foreground-1);
-
   --color-border: var(--color-grey-4);
   --color-border-hover: var(--color-grey-5);
   --color-border-active: var(--color-grey-6);
@@ -387,28 +374,8 @@
   --color-secondary: var(--color-blue-1);
   --color-secondary-foreground: var(--color-blue-10);
 
-  --color-accent: var(--color-grey-2);
-  --color-accent-foreground: var(--color-grey-10);
+  --color-success: var(--color-green-1);
 
-  --color-destructive: var(--color-red-1);
-  --color-destructive-foreground: var(--color-red-10);
-
-  --color-ring: var(--color-grey-4);
-
-  --color-shadow: var(--color-muted);
-
-  --radius-radius: var(--radius);
-
-  --animate-border-beam: border-beam calc(var(--duration)*1s) infinite linear;
-
-  @keyframes border-beam {
-    0% {
-      offset-distance: 0%;
-    }
-    100% {
-      offset-distance: 100%;
-    }
-  }
-  
+  --radius-radius: var(--radius);  
 }
 
