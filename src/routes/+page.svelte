@@ -47,7 +47,7 @@
       tags: ['SvelteKit', 'TypeScript', 'Tailwind CSS', 'SEO'],
       badge: 'Freelance Project',
       badgeColor: 'bg-success text-foreground-primary',
-      liveUrl: '#',
+      liveUrl: '/orbit/index.html',
       sourceUrl: null
     },
     {
@@ -69,7 +69,7 @@
       tags: ['Flutter', 'Dart', 'Figma', 'Firebase'],
       badge: 'Mobile App',
       badgeColor: 'bg-violet-400 text-foreground-primary',
-      liveUrl: '#',
+      liveUrl: '/orbit/index.html',
       sourceUrl: null
     }
   ];
@@ -394,6 +394,18 @@
                   <span class="px-3 py-1 text-xs bg-primary text-foreground-primary rounded-full">{tag}</span>
                 {/each}
               </div>
+
+              {#if project.id === 3 && project.liveUrl}
+                <div class="flex gap-3 mt-6">
+                  <a
+                    href={project.liveUrl}
+                    class="inline-flex items-center gap-2 px-6 py-3 border border-border text-foreground-muted hover:text-foreground-contrast rounded-radius hover:bg-grey-alpha-1 transition-colors"
+                  >
+                    <ExternalLink class="w-4 h-4" />
+                    Live
+                  </a>
+                </div>
+              {/if}
             </div>
           </div>
         {/each}
