@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../../WS-Logo.avif" />
+		<script>
+			import { waitLocale, locale } from 'svelte-i18n';
+			import { fallbackLocale, initialLocale } from '../i18n';
+			import { onMount } from 'svelte';
+			onMount(async () => {
+				await locale.set(initialLocale || fallbackLocale);
+				await waitLocale();
+			});
+			{
+					__sveltekit_305w7l = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null,null];
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.8ougoGwB.js"),
+						import("../../_app/immutable/entry/app.D7mpdHE7.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2, 10],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+
+		</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../../_app/immutable/assets/0.ogmL6DVD.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/Toaster.DKF17Rty.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.8ougoGwB.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.DnCFdYc3.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/utils.BMz8UlWh.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.CDByilGz.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.D7mpdHE7.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/preload-helper.C1FmrZbK.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/disclose-version.D37112kg.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index-client.BivCp4uE.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/svelte-component.DFf4Dkb-.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/this.DvERBsQI.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.By3dlTd0.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/utils.B1FHb5pb.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/snippet.HNmCfHFi.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.C0gpBWf0.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/legacy.D-WTFwhj.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/updater.CwET6DlA.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.CBKc7XJT.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/transitions.CBg_eyFi.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/helpers.BOWj235C.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dropdown-menu-separator.CW6tg6cH.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dropdown-menu-shortcut.CZxw9ZqJ.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/mode.B-9YxbPv.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/html.B14FGw1b.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/each.g6nCvagJ.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Toaster.svelte_svelte_type_style_lang.Dxylm-7u.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/class.D2B-ljoR.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/2.XivUVH-b.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/x.BTRtTfX_.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Icon.D57xg7fl.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.BUSitkPV.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/calendar.Am2k7MYb.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/staticData.DXXv5A1x.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/10.Bi5SbLFA.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/card-content.BBvnb9Uj.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/card-title.Bi5X-Lan.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.Q7XjfP4x.js"><!--[--><!--[!--><!--]--> <!----><script>(function setInitialMode({ defaultMode = "system", themeColors, darkClassNames = ["dark"], lightClassNames = [], defaultTheme = "", modeStorageKey = "mode-watcher-mode", themeStorageKey = "mode-watcher-theme" }) {
+  const rootEl = document.documentElement;
+  const mode = localStorage.getItem(modeStorageKey) || defaultMode;
+  const theme = localStorage.getItem(themeStorageKey) || defaultTheme;
+  const light = mode === "light" || mode === "system" && window.matchMedia("(prefers-color-scheme: light)").matches;
+  if (light) {
+    if (darkClassNames.length)
+      rootEl.classList.remove(...darkClassNames);
+    if (lightClassNames.length)
+      rootEl.classList.add(...lightClassNames);
+  } else {
+    if (lightClassNames.length)
+      rootEl.classList.remove(...lightClassNames);
+    if (darkClassNames.length)
+      rootEl.classList.add(...darkClassNames);
+  }
+  rootEl.style.colorScheme = light ? "light" : "dark";
+  if (themeColors) {
+    const themeMetaEl = document.querySelector('meta[name="theme-color"]');
+    if (themeMetaEl) {
+      themeMetaEl.setAttribute("content", mode === "light" ? themeColors.light : themeColors.dark);
+    }
+  }
+  if (theme) {
+    rootEl.setAttribute("data-theme", theme);
+    localStorage.setItem(themeStorageKey, theme);
+  }
+  localStorage.setItem(modeStorageKey, mode);
+})({"defaultMode":"dark","darkClassNames":["dark"],"lightClassNames":[],"defaultTheme":"","modeStorageKey":"mode-watcher-mode","themeStorageKey":"mode-watcher-theme"});</script><!----><!--]-->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<style>
+			html {
+			  scroll-behavior: smooth;
+			}
+		  </style>
+		<div style="display: contents"><!--[--><!--[--><!----><div class="min-h-screen absolute w-full flex flex-col bg-background text-foreground overflow-x-hidden"><!--[!--><!--]--><!----> <!--[!--><!--]--><!----> <nav class="bg-background border-b border-border"><div class="lg:container lg:mx-auto mr-4 flex justify_between items-center py-4"><!--[!--><!----><a  href="/GFOS2025/index.html" tabindex="0" class="ring-offset-background focus-visible:ring-ring inline-flex items_center justify_center whitespace-nowrap rounded-md transition-colors focus-visible_outline-none focus-visible_ring-2 focus-visible_ring-offset-2 disabled:pointer-events_none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-2xl font-bold" data-button-root=""><!----><!----><!---->Worksale<!----><!----><!----></a><!----><!--]--><!----> <div class="flex items-center space-x-4"><!--[!--><!----><a  href="/GFOS2025/index.html" tabindex="0" class="ring-offset-background focus-visible:ring-ring inline-flex items_center justify_center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible_outline-none focus-visible_ring-2 focus-visible_ring-offset-2 disabled:pointer-events_none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" data-button-root=""><!----><!----><!---->Startseite<!----><!----><!----></a><!----><!--]--><!----> <!--[!--><!--[!--><!----><a  href="/GFOS2025/login.html" tabindex="0" class="ring-offset-background focus-visible:ring-ring inline-flex items_center justify_center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible_outline-none focus-visible_ring-2 focus-visible_ring-offset-2 disabled:pointer-events_none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2" data-button-root=""><!----><!----><!---->Anmelden<!----><!----><!----></a><!----><!--]--><!--]--></div></div></nav> <main class="flex-grow container mx-auto overflow-hidden"><!--[--><!----><div class="space-y-6 md:p-4 pb-16 block"><div class="flex flex-col space-y-4 lg:flex-row lg:space-x-6 lg:space-y-0"><!--[!--><aside class="-mx-4 lg:w-1/6 mt-8"><nav class="flex space-x-2 lg:flex-col lg:space-x-0 lg:space-y-1"><!--[--><!--[!--><!----><a  href="/GFOS2025/dashboard.html" tabindex="0" class="ring-offset-background focus-visible:ring-ring inline-flex items_center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible_outline-none focus-visible_ring-2 focus-visible_ring-offset-2 disabled:pointer-events_none disabled:opacity-50 hover:text-accent-foreground h-10 px-4 py-2 hover:underline relative justify-start hover:bg-transparent" data-sveltekit-noscroll="true" data-button-root=""><!--[--><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-chart-no-axes-column-increasing w-5 h-5"><!--[--><!----><line  x1="12" x2="12" y1="20" y2="10"><!----></line><!----><!----><line  x1="18" x2="18" y1="20" y2="4"><!----></line><!----><!----><line  x1="6" x2="6" y1="20" y2="16"><!----></line><!----><!--]--><!----><!----><!----><!----></svg><!--]--> <span>Dashboard</span></a><!----><!--]--><!--[!--><!----><a  href="/GFOS2025/dashboard/calendar.html" tabindex="0" class="ring-offset-background focus-visible:ring-ring inline-flex items_center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible_outline-none focus-visible_ring-2 focus-visible_ring-offset-2 disabled:pointer-events_none disabled:opacity-50 hover:text-accent-foreground h-10 px-4 py-2 hover:underline relative justify-start hover:bg-transparent" data-sveltekit-noscroll="true" data-button-root=""><!--[--><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-calendar w-5 h-5"><!--[--><!----><path  d="M8 2v4"><!----></path><!----><!----><path  d="M16 2v4"><!----></path><!----><!----><rect  width="18" height="18" x="3" y="4" rx="2"><!----></rect><!----><!----><path  d="M3 10h18"><!----></path><!----><!--]--><!----><!----><!----><!----></svg><!--]--> <span>Kalendar</span></a><!----><!--]--><!--[!--><!----><a  href="/GFOS2025/dashboard/customers.html" tabindex="0" class="ring-offset-background focus-visible:ring-ring inline-flex items_center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible_outline-none focus-visible_ring-2 focus-visible_ring-offset-2 disabled:pointer-events_none disabled:opacity-50 hover:text-accent-foreground h-10 px-4 py-2 hover:underline relative justify-start hover:bg-transparent" data-sveltekit-noscroll="true" data-button-root=""><!--[--><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-users w-5 h-5"><!--[--><!----><path  d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"><!----></path><!----><!----><circle  cx="9" cy="7" r="4"><!----></circle><!----><!----><path  d="M22 21v-2a4 4 0 0 0-3-3.87"><!----></path><!----><!----><path  d="M16 3.13a4 4 0 0 1 0 7.75"><!----></path><!----><!--]--><!----><!----><!----><!----></svg><!--]--> <span>Kunden</span></a><!----><!--]--><!--[!--><!----><a  href="/GFOS2025/dashboard/transactions.html" tabindex="0" class="ring-offset-background focus-visible:ring-ring inline-flex items_center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible_outline-none focus-visible_ring-2 focus-visible_ring-offset-2 disabled:pointer-events_none disabled:opacity-50 hover:text-accent-foreground h-10 px-4 py-2 hover:underline relative justify-start hover:bg-transparent" data-sveltekit-noscroll="true" data-button-root=""><!--[--><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-arrow-left-right w-5 h-5"><!--[--><!----><path  d="M8 3 4 7l4 4"><!----></path><!----><!----><path  d="M4 7h16"><!----></path><!----><!----><path  d="m16 21 4-4-4-4"><!----></path><!----><!----><path  d="M20 17H4"><!----></path><!----><!--]--><!----><!----><!----><!----></svg><!--]--> <span>Transaktionen</span></a><!----><!--]--><!--[!--><!----><a  href="/GFOS2025/dashboard/settings.html" tabindex="0" class="ring-offset-background focus-visible:ring-ring inline-flex items_center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible_outline-none focus-visible_ring-2 focus-visible_ring-offset-2 disabled:pointer-events_none disabled:opacity-50 hover:text-accent-foreground h-10 px-4 py-2 hover:underline relative justify-start hover:bg-transparent" data-sveltekit-noscroll="true" data-button-root=""><!--[--><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-settings w-5 h-5"><!--[--><!----><path  d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"><!----></path><!----><!----><circle  cx="12" cy="12" r="3"><!----></circle><!----><!--]--><!----><!----><!----><!----></svg><!--]--> <span>Einstellungen</span></a><!----><!--]--><!--]--></nav><!----></aside><!--]--> <div class="flex-1 w-full"><!----><!----><div class="lg:p-8"><!--[!--><!--]--> <div class="mb-8"><h1 class="text-2xl font-bold mb-4">Transaktionsverlauf</h1> <div class="grid grid-cols-1 sm:grid-cols-2 gap-4"><!----><div class="bg-background text-card-foreground rounded-lg border shadow-sm scrollbar-thin scrollbar-track-transparent"><!----><!----><div class="flex flex-col space-y-1.5 p-6 pb-0"><!----><!----><!----><h3  class="text-lg font-semibold leading-none tracking-tight text-foreground"><!----><!---->Gesamtausgaben<!----><!----></h3><!----><!----><!----></div><!----> <!----><div class="p-6"><!----><p class="text-2xl font-bold">€0.00</p><!----></div><!----><!----></div><!----> <!----><div class="bg-background text-card-foreground rounded-lg border shadow-sm scrollbar-thin scrollbar-track-transparent"><!----><!----><div class="flex flex-col space-y-1.5 p-6 pb-0"><!----><!----><!----><h3  class="text-lg font-semibold leading-none tracking-tight text-foreground"><!----><!---->Gesamttransaktionen<!----><!----></h3><!----><!----><!----></div><!----> <!----><div class="p-6"><!----><p class="text-2xl font-bold">0 <span class="text-sm text-muted-foreground">(0 pending)</span></p><!----></div><!----><!----></div><!----></div></div> <div class="space-y-4"><!--[--><!--]--></div></div><!----><!----></div></div></div><!----><!--]--><!----></main> <footer class="bg-background border-t border-border text-center py-4"><p class="text-sm text-foreground">© 2025 Worksale. Alle Rechte vorbehalten.</p></footer></div><!----><!--]--> <!--[!--><!--]--><!--]-->
+		</div>
+	</body>
+</html>

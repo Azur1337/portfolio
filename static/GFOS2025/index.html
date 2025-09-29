@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./WS-Logo.avif" />
+		<script>
+			import { waitLocale, locale } from 'svelte-i18n';
+			import { fallbackLocale, initialLocale } from '../i18n';
+			import { onMount } from 'svelte';
+			onMount(async () => {
+				await locale.set(initialLocale || fallbackLocale);
+				await waitLocale();
+			});
+
+			{
+					__sveltekit_305w7l = {
+						base: new URL(".", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("./_app/immutable/entry/start.8ougoGwB.js"),
+						import("./_app/immutable/entry/app.D7mpdHE7.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 3],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+		</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="./_app/immutable/assets/0.ogmL6DVD.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/Toaster.DKF17Rty.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.8ougoGwB.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/entry.DnCFdYc3.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/utils.BMz8UlWh.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.CDByilGz.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.D7mpdHE7.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper.C1FmrZbK.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/disclose-version.D37112kg.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index-client.BivCp4uE.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/svelte-component.DFf4Dkb-.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/this.DvERBsQI.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.By3dlTd0.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/utils.B1FHb5pb.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/snippet.HNmCfHFi.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.C0gpBWf0.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/legacy.D-WTFwhj.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/updater.CwET6DlA.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.CBKc7XJT.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/transitions.CBg_eyFi.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/helpers.BOWj235C.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/dropdown-menu-separator.CW6tg6cH.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/dropdown-menu-shortcut.CZxw9ZqJ.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/mode.B-9YxbPv.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/html.B14FGw1b.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/each.g6nCvagJ.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/Toaster.svelte_svelte_type_style_lang.Dxylm-7u.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/class.D2B-ljoR.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/3.BgNZJZci.js"><!--[--><!--[!--><!--]--> <!----><script>(function setInitialMode({ defaultMode = "system", themeColors, darkClassNames = ["dark"], lightClassNames = [], defaultTheme = "", modeStorageKey = "mode-watcher-mode", themeStorageKey = "mode-watcher-theme" }) {
+  const rootEl = document.documentElement;
+  const mode = localStorage.getItem(modeStorageKey) || defaultMode;
+  const theme = localStorage.getItem(themeStorageKey) || defaultTheme;
+  const light = mode === "light" || mode === "system" && window.matchMedia("(prefers-color-scheme: light)").matches;
+  if (light) {
+    if (darkClassNames.length)
+      rootEl.classList.remove(...darkClassNames);
+    if (lightClassNames.length)
+      rootEl.classList.add(...lightClassNames);
+  } else {
+    if (lightClassNames.length)
+      rootEl.classList.remove(...lightClassNames);
+    if (darkClassNames.length)
+      rootEl.classList.add(...darkClassNames);
+  }
+  rootEl.style.colorScheme = light ? "light" : "dark";
+  if (themeColors) {
+    const themeMetaEl = document.querySelector('meta[name="theme-color"]');
+    if (themeMetaEl) {
+      themeMetaEl.setAttribute("content", mode === "light" ? themeColors.light : themeColors.dark);
+    }
+  }
+  if (theme) {
+    rootEl.setAttribute("data-theme", theme);
+    localStorage.setItem(themeStorageKey, theme);
+  }
+  localStorage.setItem(modeStorageKey, mode);
+})({"defaultMode":"dark","darkClassNames":["dark"],"lightClassNames":[],"defaultTheme":"","modeStorageKey":"mode-watcher-mode","themeStorageKey":"mode-watcher-theme"});</script><!----><!--]-->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<style>
+			html {
+			  scroll-behavior: smooth;
+			}
+		  </style>
+		<div style="display: contents"><!--[--><!--[--><!----><div class="min-h-screen absolute w-full flex flex-col bg-background text-foreground overflow-x-hidden"><!--[!--><!--]--><!----> <!--[!--><!--]--><!----> <nav class="bg-background border-b border-border"><div class="lg:container lg:mx-auto mr-4 flex justify-between items-center py-4"><!--[!--><!----><a  href="/GFOS2025/index.html" tabindex="0" class="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-2xl font-bold" data-button-root=""><!----><!----><!---->Worksale<!----><!----><!----></a><!----><!--]--><!----> <div class="flex items-center space-x-4"><!--[!--><!----><a  href="/GFOS2025/index.html" tabindex="0" class="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" data-button-root=""><!----><!----><!---->Startseite<!----><!----><!----></a><!----><!--]--><!----> <!--[!--><!--[!--><!----><a  href="/GFOS2025/login.html" tabindex="0" class="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2" data-button-root=""><!----><!----><!---->Anmelden<!----><!----><!----></a><!----><!--]--><!--]--></div></div></nav> <main class="flex-grow container mx-auto overflow-hidden"><!--[!--><!----><div class="relative flex items-center justify-center min-h-screen bg-background overflow-hidden"><div class="relative z-10 text-center mb-24"><h1 class="text-7xl md:text-9xl font-semibold">Worksale</h1> <p class="mt-4 text-lg text-foreground max-w-md mx-auto">Steigern Sie Ihre Verkaufsleistung mit unserem Dashboard. Ihr Tool für datengetriebene Entscheidungen und Erfolg.</p> <div class="mt-6 space-x-4"><!--[!--><!----><a  href="/GFOS2025/login.html" tabindex="0" class="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 rounded-full" data-button-root=""><!----><!----><!---->Loslegen<!----><!----><!----></a><!----><!--]--><!----> <!--[!--><!----><a  href="#" tabindex="0" class="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" data-button-root=""><!----><!----><!---->Mehr erfahren<!----><!----><!----></a><!----><!--]--><!----></div></div></div><!----><!--]--><!----></main> <footer class="bg-background border-t border-border text-center py-4"><p class="text-sm text-foreground">© 2025 Worksale. Alle Rechte vorbehalten.</p></footer></div><!----><!--]--> <!--[!--><!--]--><!--]-->
+		</div>
+	</body>
+</html>

@@ -1,0 +1,1 @@
+import{a0 as h,$ as k,_ as S,F as T,a1 as c}from"./utils.BMz8UlWh.js";function t(r,i){return r===i||(r==null?void 0:r[c])===i}function A(r={},i,a,q){return h(()=>{var f,s;return k(()=>{f=s,s=[],S(()=>{r!==a(...s)&&(i(r,...s),f&&t(a(...f),r)&&i(null,...f))})}),()=>{T(()=>{s&&t(a(...s),r)&&i(null,...s)})}}),r}export{A as b};
