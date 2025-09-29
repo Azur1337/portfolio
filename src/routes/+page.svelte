@@ -4,6 +4,35 @@
   
   let darkMode = $state(false);
   let currentSection = 'home';
+
+  type ResumeLanguage = 'en' | 'de';
+
+  let showResumeModal = $state(false);
+  let resumeLanguage = $state<ResumeLanguage>('en');
+
+  const resumeLanguageOptions: Array<{ value: ResumeLanguage; label: string; file: string }> = [
+    { value: 'en', label: 'English', file: '/ResumeEnglish.pdf' },
+    { value: 'de', label: 'Deutsch', file: '/ResumeGerman.pdf' }
+  ];
+
+  const selectedResume = $derived(
+    resumeLanguageOptions.find(option => option.value === resumeLanguage) ?? resumeLanguageOptions[0]
+  );
+
+  function openResumeModal(language?: ResumeLanguage) {
+    if (language) {
+      resumeLanguage = language;
+    }
+    showResumeModal = true;
+  }
+
+  function selectResume(language: ResumeLanguage) {
+    resumeLanguage = language;
+  }
+
+  function closeResumeModal() {
+    showResumeModal = false;
+  }
   
   onMount(() => {
     // Check for saved theme preference or default to light mode
@@ -312,7 +341,12 @@
           View Projects
         </button>
         
-        <button class="px-8 py-3 border border-border text-foreground-muted rounded-radius hover:bg-grey-alpha-1 transition-colors flex items-center gap-2" aria-label="Download CV">
+        <button
+          type="button"
+          onclick={() => openResumeModal()}
+          class="px-8 py-3 border border-border text-foreground-muted rounded-radius hover:bg-grey-alpha-1 transition-colors flex items-center gap-2"
+          aria-label="Download CV"
+        >
           <Download class="w-5 h-5" />
           Download CV
         </button>
@@ -654,4 +688,79 @@
       </p>
     </div>
   </footer>
+
+  {#if showResumeModal}
+    <div
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="resume-modal-title"
+      onclick={closeResumeModal}
+    >
+      <div
+        class="relative w-full max-w-4xl bg-background-1 text-foreground-contrast rounded-radius border border-border shadow-xl"
+        onclick={(event) => event.stopPropagation()}
+      >
+        <div class="flex items-start justify-between px-6 py-4 border-b border-border">
+          <div>
+            <h3 id="resume-modal-title" class="text-xl font-semibold text-foreground-contrast">Resume Preview</h3>
+            <p class="text-sm text-foreground-muted mt-1">Choose a language to preview or download.</p>
+          </div>
+          <button
+            type="button"
+            class="text-sm text-foreground-muted hover:text-foreground-contrast transition-colors"
+            onclick={closeResumeModal}
+          >
+            Close
+          </button>
+        </div>
+
+        <div class="px-6 py-5">
+          <div class="flex flex-wrap gap-3 mb-6">
+            {#each resumeLanguageOptions as option}
+              <button
+                type="button"
+                class="px-4 py-2 rounded-radius border text-sm font-medium transition-colors"
+                class:border-transparent={resumeLanguage === option.value}
+                class:border-border={resumeLanguage !== option.value}
+                class:bg-primary={resumeLanguage === option.value}
+                class:text-foreground-primary={resumeLanguage === option.value}
+                class:bg-grey-alpha-1={resumeLanguage !== option.value}
+                class:text-foreground-muted={resumeLanguage !== option.value}
+                onclick={(event) => {
+                  event.stopPropagation();
+                  selectResume(option.value);
+                }}
+              >
+                {option.label}
+              </button>
+            {/each}
+          </div>
+
+          <div class="rounded-radius border border-border overflow-hidden bg-background-2">
+            <iframe
+              src={`${selectedResume.file}#view=FitH`}
+              title={`Resume ${selectedResume.label}`}
+              class="w-full h-[60vh]"
+              loading="lazy"
+            ></iframe>
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-6">
+            <span class="text-sm text-foreground-muted">
+              Need a copy? Download the {selectedResume.label} version below.
+            </span>
+            <a
+              href={selectedResume.file}
+              download
+              class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-foreground-primary rounded-radius hover:bg-primary-hover transition-colors"
+            >
+              <Download class="w-4 h-4" />
+              Download {selectedResume.label} PDF
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {/if}
 </div>
