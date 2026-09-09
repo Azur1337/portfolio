@@ -1,0 +1,32 @@
+# Dependencies (reinstalled inside the image)
+node_modules
+**/node_modules
+
+# Build artifacts (regenerated inside the image)
+.svelte-kit
+build
+dist
+**/dist
+
+# Local server / Playwright artifacts
+test-results
+playwright-report
+blob-report
+
+# Version control + editor/OS metadata
+.git
+.gitignore
+.vscode
+.idea
+*.swp
+.DS_Store
+
+# Docker files (no need to ship them into the image they describe)
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Env + logs
+.env
+.env.*
+*.log
