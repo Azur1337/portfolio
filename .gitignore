@@ -1,0 +1,53 @@
+node_modules
+
+# Output
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
+/build
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Playwright
+/test-results
+/playwright-report
+
+# Dev scratch (screenshot helper output, perf profiles, temp logs)
+/.shots/
+/.bun-tmp/
+*.profile.json.gz
+.check-out.log
+
+# Engine packages (separate repos: text-splitter, ascii-renderer)
+/packages
+
+/moodboard
+/e2e
+/docs
+/.reverse
+/.vscode
+
+# Working docs and one-off artifacts
+/AGENTS.md
+/HANDOFF.md
+/BENCHMARK.md
+/lh-mobile.json
+/dev-smoke.log
+/scripts/setup-*.sh
+/scripts/shot*.mjs
+/scripts/lh-stub.json
+/scripts/strip-comments.mjs
