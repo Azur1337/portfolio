@@ -1,0 +1,224 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+/* 1:1 fonts from contentarchitecture.dev - self-hosted Geist variable fonts.
+   Served as Latin+block-element subsets (scripts/subset-fonts.ts): same
+   variable axes and every glyph the site renders, ~half the weight. The
+   originals stay in static/fonts/ untouched. Regenerate with `bun
+   scripts/subset-fonts.ts` after swapping font files. */
+@font-face {
+	font-family: 'GeistSans';
+	src: url('/fonts/GeistSans.latin.woff2') format('woff2');
+	font-display: swap;
+	font-weight: 100 900;
+}
+@font-face {
+	font-family: 'GeistMono';
+	src: url('/fonts/GeistMono.latin.woff2') format('woff2');
+	font-display: swap;
+	font-weight: 100 900;
+}
+/* Upheaval: a 20px bitmap pixel font (by énigma, 100% free) used for the hero
+   name. Designed at 20px; it stays crisp at whole multiples of 20. */
+@font-face {
+	font-family: 'Upheaval';
+	src: url('/fonts/Upheaval.latin.woff2') format('woff2');
+	/* swap, not block: this is the hero name (the LCP element), and a block
+	   period held LCP until the font resolved. The preload in app.html keeps
+	   the fallback-flash window tiny */
+	font-display: swap;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+/* Design tokens that generate Tailwind utilities (colors + fonts). */
+@theme {
+	--font-sans: 'GeistSans', ui-sans-serif, system-ui, sans-serif;
+	--font-mono: 'GeistMono', ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+
+	/* the site's 1px spacing base: px-16 = 16px, gap-64 = 64px, ... */
+	--spacing: 0.0625rem;
+
+	/* Numeric radius scale (the site's rounded-2 / rounded-4 / rounded-8 utilities).
+	   Without these, rounded-N generates no CSS and corners render square. */
+	--radius-2: calc(var(--spacing) * 2);
+	--radius-4: calc(var(--spacing) * 4);
+	--radius-8: calc(var(--spacing) * 8);
+
+	--color-off-white: #f1eee7;
+	--color-white: #fff;
+	--color-black: #232323;
+	--color-black-deep: #000;
+	--color-dark-grey: #5b5a56;
+	--color-mid-grey: #cbcbcb;
+	--color-ghost-grey: #dedede;
+	--color-accent: #ae8963;
+
+	/* Fluid type scale (the site's exact clamp() definitions). In @theme so
+	   Tailwind generates the text-headline-10 / text-body-20 / ... utilities. */
+	--text-ui: calc(var(--spacing) * 12);
+	--text-ui--line-height: 1.25;
+	--text-caption-10: clamp(
+		calc(var(--spacing) * 12),
+		calc(var(--spacing) * 12) + (14 - 12) * var(--fluid-slope),
+		calc(var(--spacing) * 14)
+	);
+	--text-caption-10--line-height: 1.25;
+	--text-caption-20: clamp(
+		calc(var(--spacing) * 14),
+		calc(var(--spacing) * 14) + (16 - 14) * var(--fluid-slope),
+		calc(var(--spacing) * 16)
+	);
+	--text-caption-20--line-height: 1.25;
+	--text-body-10: clamp(
+		calc(var(--spacing) * 14),
+		calc(var(--spacing) * 14) + (16 - 14) * var(--fluid-slope),
+		calc(var(--spacing) * 16)
+	);
+	--text-body-10--line-height: 1.25;
+	--text-body-20: clamp(
+		calc(var(--spacing) * 14),
+		calc(var(--spacing) * 14) + (18 - 14) * var(--fluid-slope),
+		calc(var(--spacing) * 18)
+	);
+	--text-body-20--line-height: 1.25;
+	--text-body-30: clamp(
+		calc(var(--spacing) * 16),
+		calc(var(--spacing) * 16) + (24 - 16) * var(--fluid-slope),
+		calc(var(--spacing) * 24)
+	);
+	--text-body-30--line-height: 1.25;
+	--text-headline-10: clamp(
+		calc(var(--spacing) * 32),
+		calc(var(--spacing) * 32) + (48 - 32) * var(--fluid-slope),
+		calc(var(--spacing) * 48)
+	);
+	--text-headline-10--line-height: 1.1;
+	--text-headline-20: clamp(
+		calc(var(--spacing) * 40),
+		calc(var(--spacing) * 40) + (80 - 40) * var(--fluid-slope),
+		calc(var(--spacing) * 80)
+	);
+	--text-headline-20--line-height: 1;
+
+	/* Terminal-chrome animations (see @keyframes below). */
+	--animate-status-ping: status-ping 1.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+	--animate-cursor-blink: cursor-blink 1.1s step-end infinite;
+	/* Hero scroll cue: the cube steps down through 6 lines (hard jumps). */
+	--animate-hero-scroll-cue: hero-scroll-cue 4.8s linear infinite;
+}
+
+/* Fluid scale inputs + code/transition tokens. (--spacing and the type scale
+   live in @theme above, so Tailwind generates the spacing and text utilities.) */
+:root {
+	--fluid-min-w: 1400;
+	--fluid-max-w: 1920;
+	--fluid-slope: calc(
+		(100vw - calc(var(--spacing) * var(--fluid-min-w))) / (var(--fluid-max-w) - var(--fluid-min-w))
+	);
+
+	/* Syntax highlighting (One Dark) */
+	--sh-identifier: #abb2bf;
+	--sh-keyword: #e06c75;
+	--sh-string: #98c379;
+	--sh-property: #98c379;
+	--sh-number: #61afef;
+	--sh-class: #61afef;
+	--sh-entity: #e5c07b;
+	--sh-comment: #56b6c2;
+	--sh-jsxliterals: #c678dd;
+	--sh-sign: #e06c75;
+
+	/* ASCII page-swap transition */
+	--ascii-transition-bg: #000;
+	--ascii-transition-color: #fff;
+}
+
+/* Shared terminal-chrome animations (the nav's "new" dot, the hero CTA's
+   status dot, and the status-bar cursor). Global so any component can use
+   them; `motion-reduce:hidden` / `motion-reduce:animate-none` opt out. */
+@keyframes status-ping {
+	0% {
+		transform: scale(1);
+		opacity: 0.7;
+	}
+	75%,
+	100% {
+		transform: scale(2.5);
+		opacity: 0;
+	}
+}
+@keyframes cursor-blink {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}
+
+/* Hero scroll cue: the 24px cube steps down through 6 lines (8px pitch) with
+   hard jumps - no tweening between positions. Each step's top edge lands on the
+   next line; the 6th step holds, then it snaps back to the top. */
+@keyframes hero-scroll-cue {
+	0%,
+	16.66% {
+		transform: translateY(0);
+	}
+	16.67%,
+	33.33% {
+		transform: translateY(8px);
+	}
+	33.34%,
+	50% {
+		transform: translateY(16px);
+	}
+	50.01%,
+	66.66% {
+		transform: translateY(24px);
+	}
+	66.67%,
+	83.33% {
+		transform: translateY(32px);
+	}
+	83.34%,
+	100% {
+		transform: translateY(40px);
+	}
+}
+
+@layer base {
+	* {
+		@apply border-mid-grey;
+	}
+	button:not([disabled]),
+	[role='button']:not([disabled]) {
+		cursor: pointer;
+	}
+	body {
+		@apply bg-off-white font-sans text-black antialiased;
+	}
+	/* Selected text becomes a solid block in its own color: `currentColor`
+	   resolves to the text's computed color, so dark-grey text selects with
+	   a dark-grey highlight, ink with ink, etc. */
+	::selection {
+		background: currentColor;
+	}
+}
+
+/* Lenis smooth scroll (see SmoothScroll.svelte). Required so the smoothed
+   scroll isn't fought by the browser's own scroll-behavior. */
+html.lenis,
+html.lenis body {
+	height: auto;
+}
+.lenis.lenis-smooth {
+	scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+	overscroll-behavior: auto;
+}
+.lenis.lenis-stopped {
+	overflow: hidden;
+}
