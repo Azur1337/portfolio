@@ -1,0 +1,17 @@
+# Package Managers
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+bun.lock
+bun.lockb
+
+# Playwright
+/test-results/
+/playwright-report/
+
+# Miscellaneous
+/static/
+/frames-tmp/
+
+# Lighthouse run artifacts
+/lh-mobile.json
