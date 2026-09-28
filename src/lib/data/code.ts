@@ -1,21 +1,24 @@
-import glyphFieldSrc from '../../../packages/ascii-renderer/src/glyph-field.ts?raw';
+import glyphFieldSrc from '../assets/ascii-renderer-src/src/glyph-field.ts.txt?raw';
 
 export const glyphFieldPath = 'packages/ascii-renderer/src/glyph-field.ts';
 
 const raw = import.meta.glob<string>(
 	[
-		'../../../packages/ascii-renderer/src/**/*.ts',
-		'../../../packages/ascii-renderer/tests/**/*.ts',
-		'../../../packages/ascii-renderer/assets/*.ts',
-		'../../../packages/ascii-renderer/demo/*.{ts,html}',
-		'../../../packages/ascii-renderer/{package.json,tsconfig.json,vite.config.ts,README.md,HANDOFF.md}'
+		'../assets/ascii-renderer-src/src/**/*.ts.txt',
+		'../assets/ascii-renderer-src/tests/**/*.ts.txt',
+		'../assets/ascii-renderer-src/assets/*.ts.txt',
+		'../assets/ascii-renderer-src/demo/*.{ts,html}.txt',
+		'../assets/ascii-renderer-src/{package.json,tsconfig.json,vite.config.ts,README.md}.txt'
 	],
 	{ query: '?raw', import: 'default' }
 );
 
 export const loaders: Record<string, () => Promise<string>> = {};
 for (const [key, load] of Object.entries(raw)) {
-	loaders[key.replace('../../../', '')] = load;
+	const shown = key
+		.replace('../assets/ascii-renderer-src/', 'packages/ascii-renderer/')
+		.replace(/\.txt$/, '');
+	loaders[shown] = load;
 }
 
 export type TreeEntry = {
