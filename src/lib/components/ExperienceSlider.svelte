@@ -101,7 +101,7 @@
 	</div>
 
 	<div
-		class="track -mx-16 flex gap-x-16 overflow-x-auto px-16 lg:-mx-80 lg:px-80"
+		class="track -mx-16 flex overflow-x-auto lg:-mx-80 lg:gap-x-16 lg:px-80"
 		bind:this={track}
 		onscroll={onScroll}
 	>
