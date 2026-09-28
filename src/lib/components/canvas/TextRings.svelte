@@ -584,7 +584,7 @@
 
 <div
 	bind:this={containerEl}
-	class="relative h-full w-full cursor-pointer touch-none overflow-hidden bg-black select-none {className}"
+	class="relative h-full w-full cursor-pointer touch-pan-y overflow-hidden bg-black select-none {className}"
 	onpointerenter={onPointerEnter}
 	onpointermove={onPointerMove}
 	onpointerleave={onPointerLeave}
