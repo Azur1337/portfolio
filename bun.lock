@@ -6,6 +6,7 @@
       "name": "portfolio2.0",
       "dependencies": {
         "azur-ascii-renderer": "^0.2.0",
+        "azur-text-splitter": "^0.1.0",
         "gsap": "^3.15.0",
         "lenis": "^1.3.26",
       },
@@ -422,6 +423,8 @@
     "axobject-query": ["axobject-query@4.1.0", "", {}, "sha512-qIj0G9wZbMGNLjLmg1PT6v2mE9AH2zlnADJD/2tC6E00hgmhUOfEB6greHPAfLRSufHqROIUTkw6E+M3lH0PTQ=="],
 
     "azur-ascii-renderer": ["azur-ascii-renderer@0.2.0", "", {}, "sha512-rglGDBCWAWaoB/xVGAPUYNd+SPwvjcssWHisqhjXqwNm+lx1YTtxobqp2KHwkD5GrcsL7ksmfABdvAjIh6t0Yg=="],
+
+    "azur-text-splitter": ["azur-text-splitter@0.1.0", "", {}, "sha512-YIaqttD4D5FZhesVtjAcKMcG022E/acE/5JnKhulUn27nIDRKQcOYvxqWHH7LQkJqz9oJdssE2TBLxjndYip5w=="],
 
     "balanced-match": ["balanced-match@4.0.4", "", {}, "sha512-BLrgEcRTwX2o6gGxGOCNyMvGSp35YofuYzw9h1IMTRmKqttAZZVU67bdb9Pr2vUHA8+j3i2tJfjO6C6+4myGTA=="],
 

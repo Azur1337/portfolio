@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { splitText, type SplitLevel, type TextSplit } from 'text-splitter';
+	import { splitText, type SplitLevel, type TextSplit } from 'azur-text-splitter';
 	import { loadAnimationEngine } from '$lib/stores/animation-engine';
 	import { onIdle } from '$lib/utils/idle';
 	import type { Snippet } from 'svelte';

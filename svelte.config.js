@@ -61,11 +61,6 @@ export default {
 		// critical chain (each ~300ms under mobile throttling); inlining trades
 		// ~11KB of extra HTML for zero render-blocking round trips. (This Kit
 		// version takes a byte threshold; 64KB covers every style in the app)
-		inlineStyleThreshold: 65536,
-		alias: {
-			// `text-splitter` is a local (unpublished) workspace package; resolve it
-			// straight from source so builds and `bun install` never hit the registry
-			'text-splitter': './packages/text-splitter/src/index.ts'
-		}
+		inlineStyleThreshold: 65536
 	}
 };
